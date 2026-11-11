@@ -1,20 +1,14 @@
-def find(names,target):
-    left = 0
-    right = len(names) -1
+def find_paper(papers, name):
+    for paper in papers:
+        if paper == name:
+            return True
+    return False
 
-    while left <= right:
-        middle = (left + right) // 2
+papers = ["Anita", "Bob", "Charlie", "David", "Eve"]
+search_result = "Eve"
+result = find_paper(papers, search_result)
 
-        if names[middle] == target:
-            return middle
-        elif names[middle] < target:
-            left = middle + 1
-        else:
-            right = middle -1 
-    return - 1 
-names = ["Alice", "Bob", "Charlie", "David", "Eve"]
-target = "David"
-result = find(names, target)
-print(result)
-
-            
+if result:
+    print("paper found!")
+else:
+    print("paper not found!")
