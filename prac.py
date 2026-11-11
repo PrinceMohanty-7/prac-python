@@ -1,21 +1,20 @@
-def best_choc(prices,window_size):
-    current_total = sum(prices[0:window_size])
-    best_total = current_total
-    window_totals = [0] * (len(prices) - window_size + 1)
+def find(names,target):
+    left = 0
+    right = len(names) -1
 
-    for i in range(window_size, len(prices)):
-        left_choc = prices[i - window_size]
-        right_choc = prices[i]
+    while left <= right:
+        middle = (left + right) // 2
 
-        current_total = current_total - left_choc + right_choc
-
-        window_totals[i - window_size + 1] = current_total
-
-    return best_total
-
-prices = [2, 1, 5, 1, 3, 2]
-window_size = 3
-
-result = best_choc(prices, window_size)
-
+        if names[middle] == target:
+            return middle
+        elif names[middle] < target:
+            left = middle + 1
+        else:
+            right = middle -1 
+    return - 1 
+names = ["Alice", "Bob", "Charlie", "David", "Eve"]
+target = "David"
+result = find(names, target)
 print(result)
+
+            
