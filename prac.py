@@ -1,14 +1,17 @@
-def find_paper(papers, name):
-    for paper in papers:
-        if paper == name:
-            return True
+def find_duplicates(numbers):
+    for i in range(len(numbers)):
+        for j in range(len(numbers)):
+            if i != j and numbers[i] == numbers[j]:
+                return True
     return False
 
-papers = ["Anita", "Bob", "Charlie", "David", "Eve"]
-search_result = "Eve"
-result = find_paper(papers, search_result)
+numbers = [10, 20, 30, 40, 10]
+result = find_duplicates(numbers)
 
 if result:
-    print("paper found!")
+    print("Duplicates found in the list.")
 else:
-    print("paper not found!")
+    print("No duplicates found in the list.")
+
+print(result)
+    
