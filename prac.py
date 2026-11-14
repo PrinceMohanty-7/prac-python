@@ -1,17 +1,21 @@
-def has_fast(numbers):
-    seen = set()
+# def duplicates_fast(numbers):
+#     seen = set()
 
-    for number in numbers:
-        if number in seen:
-            return True
-        seen.add(number)
-    return False
+#     for number in numbers:
+#         if number in seen:
+#             return True
+#         seen.add(number)
+#     return False
 
-numbers = [10,22,55,90,10,69]
-result = has_fast(numbers)
-if result:
-    print("Duplicates found")
-else:
-    print("Duplicate not found")
+# numbers = [22,10,55,10,44]
+# result = duplicates_fast(numbers)
 
+# if result:
+#     print("Duplicates found sir")
+# else:
+#     print("No duplicates r there sir!")
 
+marks = [22,55,11,88,5]
+print(marks[0])
+print(marks[2])
+print(marks[4])
