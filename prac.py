@@ -1,21 +1,24 @@
-# def duplicates_fast(numbers):
-#     seen = set()
+def find_two_numbers(numbers, target):
+    left = 0
+    right = len(numbers) - 1
 
-#     for number in numbers:
-#         if number in seen:
-#             return True
-#         seen.add(number)
-#     return False
+    while left < right:
+        total = numbers[left] + numbers[right]
 
-# numbers = [22,10,55,10,44]
-# result = duplicates_fast(numbers)
+        if total == target:
+            return [numbers[left], numbers[right]]
 
-# if result:
-#     print("Duplicates found sir")
-# else:
-#     print("No duplicates r there sir!")
+        elif total > target:
+            right = right - 1
 
-marks = [22,55,11,88,5]
-print(marks[0])
-print(marks[2])
-print(marks[4])
+        else:
+            left = left + 1
+
+    return []
+
+
+numbers = [1, 2, 4, 6, 8, 9]
+target = 100
+
+result = find_two_numbers(numbers, target)
+print(result)
